@@ -1,0 +1,46 @@
+<!doctype html>
+<html class="no-js" lang="">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <title></title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <link rel="apple-touch-icon" href="apple-touch-icon.png">
+    <!-- Place favicon.ico in the root directory -->
+
+    <link rel="stylesheet" href="css/main.css">
+    <script src="js/vendor/modernizr-2.8.3.min.js"></script>
+  </head>
+  <body>
+  <div style="display:none;">
+    <audio id="car_audio" autoplay="true" controls loop preload="preload" volume="0.2" >
+      <source src="css/5.mp3" type="audio/mpeg" >
+    </audio>
+    <audio id="bui" controls preload="preload" volume="1" >
+      <source src="css/boom.mp3" type="audio/mpeg" >
+    </audio>
+  </div>
+    <div class="main">
+      <ul class="touch-ul cf">
+        <li data-index="0"></li>
+        <li data-index="1"></li>
+        <li data-index="2"></li>
+        <li data-index="3"></li>
+      </ul>
+      <p class="rank">分数: <span class="rank-number">0</span></p>
+    </div>
+    <div id="mp-alert">
+      <div id="mp-alert-main">
+        <p>游戏结束</p>
+        <button>重新开始</button>
+      </div>
+    </div>
+    <script src="//upcdn.b0.upaiyun.com/libs/jquery/jquery-2.0.3.min.js"></script>
+    <script src="js/vendor/jquery.touchSwipe.js"></script>
+    <script src="js/vendor/Tween.js"></script>
+    <script src="js/plugins.js"></script>
+    <script src="js/main.js"></script>
+  </body>
+</html>
