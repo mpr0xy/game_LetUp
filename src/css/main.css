@@ -234,3 +234,8 @@ body {
   font-size: 16px;
   z-index: 1000;
 }
+.share-img {
+  position: fixed;
+  left: -1000px;
+  top: -1000px;
+}
