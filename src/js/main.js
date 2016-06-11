@@ -46,10 +46,6 @@
         return;
       }
       addObject($target);
-      if (!isPaly) {
-        isPaly = true;
-        $("#car_audio")[0].play();
-      }
     },
     //Default is 75px, set to 0 for demo so any distance triggers swipe
     threshold: 0
@@ -204,6 +200,10 @@
   var isStart = false;
   function start() {
     isStart = true;
+    if (!isPaly) {
+      isPaly = true;
+      $("#car_audio")[0].play();
+    }
     wallObject.init();
     function _loop() {
       if (!isStart) {
@@ -227,6 +227,10 @@
     $(".start-button-div").show();
     clearTimeout(timer);
     timer = null;
+    // if (!isPaly) {
+      isPaly = false;
+      $("#car_audio")[0].pause();
+    // }
   }
 
   $(".start-button-div").on("click", function() {
