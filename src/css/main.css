@@ -239,3 +239,25 @@ body {
   left: -1000px;
   top: -1000px;
 }
+
+.start-button-div {
+  position: absolute;
+  width: 100%;
+  bottom: 30px;
+}
+#start-tips {
+  text-align: center;
+  font-size: 16px;
+  line-height: 3;
+  color: #0066bb;
+}
+
+#start-game {
+  display: block;
+  width: 80px;
+  margin: 0 auto;
+  font-size: 16px;
+  line-height: 2;
+  color: #ffffff;
+  background-color: #0066bb;
+}

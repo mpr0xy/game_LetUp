@@ -34,6 +34,7 @@
 
   // 先把屏幕分成4列
   var isPaly = false;
+  var downTime = 1000;
 
   $(".touch-ul").swipe( {
     //Single swipe handler for left swipes
@@ -123,7 +124,7 @@
           if ($(item).height() >= $('.touch-ul').height()) {
             stop();
             mpAlert("<p>分数：" + self.rank + "</p><p>游戏结束</p>", function() {
-              start();
+              wallObject.init();
             });
           }
         });
@@ -200,21 +201,39 @@
   }
 
   var timer = null;
+  var isStart = false;
   function start() {
+    isStart = true;
     wallObject.init();
-    timer = setInterval(function() {
-      wallObject.wallStep();
-    }, 500);
+    function _loop() {
+      if (!isStart) {
+        return;
+      }
+      timer = setTimeout(function() {
+        _loop();
+        if (downTime > 500) {
+          downTime = downTime - 20;
+        }
+        wallObject.wallStep();
+      }, downTime);
+    }
     wallObject.wallStep();
-    wallObject.wallStep();
+    _loop();
+    // wallObject.wallStep();
   }
 
   function stop() {
-    clearInterval(timer);
+    isStart = false;
+    $(".start-button-div").show();
+    clearTimeout(timer);
     timer = null;
   }
 
-  start();
+  $(".start-button-div").on("click", function() {
+    $(".start-button-div").hide();
+    start();
+  });
+
 
 })();
 
